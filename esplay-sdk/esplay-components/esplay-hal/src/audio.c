@@ -26,7 +26,7 @@ void audio_volume_set(int value)
     }
 
     volumeLevel = value;
-    Volume = (float)(volumeLevel*10) * 0.001f;
+    Volume = (float)(volumeLevel*10) * 0.0001f;
 
     if (volumeLevel == 0)
         audio_amp_disable();

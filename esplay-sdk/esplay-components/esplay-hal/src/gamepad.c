@@ -121,6 +121,9 @@ input_gamepad_state gamepad_input_read_raw()
         else
             state.values[i] = 0;
     }
+    uint8_t tmp = state.values[GAMEPAD_INPUT_A];
+    state.values[GAMEPAD_INPUT_A] = state.values[GAMEPAD_INPUT_B];
+    state.values[GAMEPAD_INPUT_B] = tmp;
     #endif
 
     state.values[GAMEPAD_INPUT_MENU] = !(gpio_get_level(MENU));
